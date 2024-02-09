@@ -1,0 +1,26 @@
+<h2 class="text-center" mat-dialog-title>EDITAR POST</h2>
+<mat-dialog-content class="mat-typography">
+    <form class="example-form"  [formGroup]="editarPost" (ngSubmit)="savepostedit()">
+        <mat-form-field class="example-full-width">
+            <mat-label>TITULO</mat-label>
+            <input matInput placeholder="test tecnico" formControlName="title">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>CONTENIDO</mat-label>
+            <textarea matInput placeholder="hola este es mi post" formControlName="body"></textarea>
+        </mat-form-field>
+        <div class="row mt-3">
+            <mat-checkbox class="example-margin"  formControlName="estado"  (click)="contenidoinput()">¿Post público?</mat-checkbox>
+        </div>
+        <div class="row mt-3">
+            <mat-checkbox class="example-margin" [disabled]="tipocontenido" formControlName="adultos">¿Contenido para niños?</mat-checkbox>
+        </div>
+
+        <div class="row mt-5">
+            <button mat-raised-button color="primary" type="submit">GUARDAR</button>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
